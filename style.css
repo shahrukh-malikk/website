@@ -1,0 +1,753 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+html{
+    scroll-behavior: smooth; /* Allows a smooth animated "scroll effect" between elements within the scrolling box. */
+}
+
+/* navbar css*/
+.navbar{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: rgba(0, 0, 0, 0.5);
+    position: sticky; /* An element with position: sticky; is positioned based on the user's scroll position. */
+    top: 0;
+}
+.navbar ul{
+    display: flex;
+    list-style: none;
+    margin: 20px 0px;
+}
+/* em (is me font ya content relativly change hoga hai baqi content ke size ke hisab se 
+   rem (is me wo content fix hojata hai aur koi farq nai parta usey content ka size change hone se)*/
+.navbar ul li{
+    font-family: century;
+    font-size: 1.1rem;
+    font-weight: bold;
+
+}
+.navbar ul li a{
+    text-decoration: none; /* In this it removes all the docration from text like underline, color */
+    color: white;
+    padding: 9px 25px;
+    transition: all .5s ease; /* specifies a transition effect with the same speed from start to end */
+}
+.navbar ul li a:hover{
+    background-color: white;
+    color: black;
+    box-shadow: 0 0 10px white;
+}
+
+/* Home Section */
+#home{
+    display: flex;
+    flex-direction: column;
+    background-color: rgba(0, 0, 0, 0.5);
+    height: 840px;
+    justify-content: center;
+    align-items: center;
+    color: white;
+}
+/* before (content se pehle exist karta hai isme image ke above se styling horahi hai aur ye content ke baghair use nai hosakta 
+idhar humne strings li hain kiyunke hamare pass image hai */
+#home::before{
+    content: "";
+    position: absolute;
+    top: 0;
+    right: 0;
+    background: url('akshar-dave-BcvPlibJyo0-unsplash.jpg') no-repeat center center/cover;
+    height: 900px;
+    width: 100%;
+    z-index: -1; /*It is relative/depends on position (it is z axis) (sets the z-order of a positioned element and its descendants 
+                                    or flex items. Overlapping elements with a larger z-index cover those with a smaller one.) */
+    opacity: .8;
+}
+.main{
+    display: flex;
+    flex-direction: column; /* The flexible items are displayed vertically, as a column */
+    align-items: center;
+    position: absolute; /* The element is positioned relative to its first positioned (not static) ancestor element */
+    top: 30%;  
+}
+.headings1{
+    font-family: century;
+    font-size: 1.8rem;
+    text-align: center;
+    margin: 30px  0px;
+}
+.btn{
+    padding: 10px 35px;
+    background-color: transparent;
+    border: 1px solid white;
+    color: white;
+    outline: none;
+    transition: 0.6s ease;
+    text-decoration: none;
+
+}
+.btn:hover{
+    cursor: pointer;
+    background-color: white;
+    color: black;
+    box-shadow: 0 0 5px white, 0 0 10px white,0 0 15px white; /* Defining multiple shadows */
+    font-weight: bold;
+}
+
+
+
+
+/* About Section */
+#about{
+    display: flex;
+    flex-direction: column;
+    box-sizing: border-box; /* The width and height properties & min/max properties includes content, padding and border */
+    padding: 20px;
+    margin-bottom: 50px;
+}
+#pic{
+    display: flex;
+}
+#pic img{
+    width: 575px;
+    height: 400px;
+}
+#intro{
+    display: flex;
+    flex-direction: column;
+    text-align: justify;
+    padding: 10px;
+}
+#intro h2{
+    font-size: 30px;
+    margin-bottom: 20px;
+}
+#intro p{
+    font-size: 20px;
+}
+#about h1{
+    font-size: 32px;
+}
+
+
+
+.carousel-container {
+    width: 80%;
+    max-width: 800px;
+    margin: 20px auto;
+    text-align: center;
+    position: relative;
+}
+
+.carousel-title {
+    margin-bottom: 20px;
+}
+
+.carousel {
+    display: flex;
+    align-items: center;
+    position: relative;
+    overflow: hidden;
+    width: 100%;
+}
+
+.carousel-track {
+    display: flex;
+    transition: transform 0.5s ease-in-out;
+}
+
+.carousel-slide {
+    flex: 0 0 33.33%; /* Display 3 images at a time */
+    min-width: 33.33%;
+    padding: 10px;
+    box-sizing: border-box;
+    text-align: center;
+}
+
+.carousel-slide img {
+    max-width: 90%;
+    max-height: 90px;
+    width: auto;
+    height: auto;
+    object-fit: contain;
+}
+
+.carousel-button {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background: none;
+    border: none;
+    font-size: 2em;
+    cursor: pointer;
+    z-index: 1;
+}
+
+.carousel-button.prev { left: 0; color: #959494; }
+.carousel-button.next { right: 0; color: #959494; }
+
+.carousel-dots {
+    display: flex;
+    justify-content: center;
+    margin-top: 20px;
+}
+
+.carousel-dots button {
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    background-color: #ddd;
+    border: none;
+    margin: 0 5px;
+    cursor: pointer;
+}
+
+.carousel-dots button.active {
+    background-color: #777;
+}
+
+
+
+
+
+
+/*Portfolio Section*/
+#portfolio{
+    display: flex;
+    flex-direction: column;
+    background-color: rgba(0, 0, 0, 0.9);
+    color: white;
+    align-items: center;
+    padding: 20px;
+    
+}
+.gallery {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center; 
+    box-sizing: border-box;
+    overflow: hidden;
+}
+.gallery {
+    margin-top: 15px; /* Adjust this value as needed */
+}
+
+.portfolio-header {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    position: relative;
+    padding: 10px 20px;
+}
+
+/* Centering the heading properly */
+.portfolio-header .headings {
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    text-align: center;
+    font-size: 28px;
+    font-weight: bold;
+    margin: 0;
+    margin-top: 5px;
+    
+}
+
+/* Search box container (aligns right) */
+.search-container {
+    position: absolute;
+    right: 20px;
+    display: flex;
+    align-items: center;
+    margin-top: 7px;
+}
+
+/* Search box styling */
+#search-box {
+    padding: 8px 40px 8px 12px; /* Reduce padding to make it thinner */
+    font-size: 16px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    width: 230px;
+}
+
+/* Search icon inside input */
+.search-icon {
+    position: absolute;
+    right: 12px;
+    font-size: 16px;
+    color: #888;
+    cursor: pointer;
+}
+
+
+
+
+
+
+
+.wraper {
+    font-family: sans-serif;
+    text-align: center;
+    margin: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.gallery img {
+    width: 240px;
+    height: 210px;
+    margin-bottom: 5px;
+    transition: transform 0.3s ease-in-out;
+    border-radius: 5px;
+}
+
+.gallery img:hover {
+    transform: translateY(-6px);
+}
+
+/* Box under the image */
+.info-box {
+    background: black;
+    color: white;
+    padding: 8px;
+    width: 240px;
+    text-align: center;
+    border-radius: 5px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 5px; /* Space between text and icon */
+}
+
+.project-name {
+    font-size: 16px;
+    font-weight: bold;
+    display: block;
+}
+
+.icon-link {
+    display: inline-block;
+    margin-top: 2px;
+    transition: transform 0.3s ease-in-out;
+}
+
+.icon-link i {
+    font-size: 23px; /* Smaller icon */
+    color: white;
+}
+
+.icon-link:hover {
+    transform: translateY(-3px); /* Moves up slightly on hover */
+}
+
+.content{
+    position: absolute;
+    top: 45%;
+    left: 18%;
+    text-transform: uppercase;
+    font-size: 14px;
+    color: white;
+    white-space: nowrap;
+    overflow: hidden;
+    text-align: center;
+
+}
+.content a{
+    font-size: 23px bold;
+    display: block;
+    background-color: transparent;
+    border: 3px solid white;
+    color: white;
+    outline: none;
+    text-align: center;
+    padding: 10px;
+    cursor: pointer;
+    text-decoration: none;
+}
+.content1{
+    position: absolute;
+    top: 45%;
+    left: 25%;
+    text-transform: uppercase;
+    font-size: 14px;
+    color: #20DCBC;
+    white-space: nowrap;
+    overflow: hidden;
+    text-align: center;
+
+}
+.content1 a{
+    font-size: 23px bold;
+    display: block;
+    background-color: transparent;
+    border: 3px solid black;
+    color: white;
+    outline: none;
+    text-align: center;
+    padding: 10px;
+    cursor: pointer;
+    text-decoration: none;
+}
+.content2{
+    position: absolute;
+    top: 45%;
+    left: 28%;
+    text-transform: uppercase;
+    font-size: 14px;
+    color: white;
+    white-space: nowrap;
+    overflow: hidden;
+    text-align: center;
+
+}
+.content2 a{
+    font-size: 23px bold;
+    display: block;
+    background-color: transparent;
+    border: 3px solid white;
+    color: white;
+    outline: none;
+    text-align: center;
+    padding: 10px;
+    cursor: pointer;
+    text-decoration: none;
+}
+.content3{
+    position: absolute;
+    top: 45%;
+    left: 17%;
+    text-transform: uppercase;
+    font-size: 14px;
+    color: #20DCBC;
+    white-space: nowrap;
+    overflow: hidden;
+    text-align: center;
+
+}
+.content3 a{
+    font-size: 23px bold;
+    display: block;
+    background-color: transparent;
+    border: 3px solid black;
+    color: white;
+    outline: none;
+    text-align: center;
+    padding: 10px;
+    cursor: pointer;
+    text-decoration: none;
+}
+/*
+.overlay{
+  opacity: 0;
+
+}
+
+.wraper:hover{
+    opacity: 0.5;
+}
+
+.wraper:hover .overlay{
+    opacity: 1 ; 
+}
+*/
+.load-more{
+    padding: 10px 35px;
+    background-color: transparent;
+    border: 1px solid white;
+    color: white;
+    outline: none;
+    transition: 0.6s ease;
+    text-decoration: none;
+    margin: 10px;
+
+}
+.load-more:hover{
+    cursor: pointer;
+    background-color: white;
+    color: black;
+    box-shadow: 0 0 5px white, 0 0 10px white,0 0 15px white; /* Defining multiple shadows */
+    font-weight: bold;
+}
+.load-less{
+    padding: 10px 35px;
+    background-color: transparent;
+    border: 1px solid white;
+    color: white;
+    outline: none;
+    transition: 0.6s ease;
+    text-decoration: none;
+    margin: 10px;
+}
+.load-less:hover{
+    cursor: pointer;
+    background-color: white;
+    color: black;
+    box-shadow: 0 0 5px white, 0 0 10px white,0 0 15px white; /* Defining multiple shadows */
+    font-weight: bold;
+}
+
+
+/* Lightbox styles */
+.lightbox {
+    display: none;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 50%;
+    max-width: 900px;
+    background: rgba(0, 0, 0, 0.9);
+    padding: 10px;
+    text-align: center;
+    border-radius: 10px;
+    z-index: 1000;
+}
+
+.lightbox-img {
+    width: 100%;
+    max-height: 550px;
+    border-radius: 5px;
+}
+
+/* Icon box styling */
+.icon-box {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: black;
+    padding: 5px;
+    margin-top: 5px;
+    border-radius: 5px;
+}
+
+/* Icon links */
+.icon-link {
+    color: white;
+    font-size: 17px;
+    text-decoration: none;
+    margin: 0 10px;
+    transition: transform 0.3s ease, color 0.3s ease;
+}
+
+.icon-link:hover {
+    transform: translateY(-5px);
+}
+
+
+/* Close button */
+.close {
+    position: absolute;
+    top: 10px;
+    right: 15px;
+    color: white;
+    font-size: 30px;
+    cursor: pointer;
+}
+
+.close:hover {
+    background-color: black;
+    color: white;
+}
+
+/* Navigation buttons */
+.prev, .next {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background-color: rgba(255, 255, 255, 0.5);
+    border: none;
+    padding: 20px;  
+    cursor: pointer;
+}
+
+.prev {
+    left: 10px;
+}
+
+.next {
+    right: 10px;
+}
+
+
+
+
+
+/* Contact Section */
+
+#contact{
+    display: flex;
+    flex-direction: column;
+    box-sizing: border-box;
+    background-color: rgba(0, 0, 0, 0.9);
+    padding: 10px;
+    
+}
+#contact3{
+    display: flex;
+    flex-direction: column;
+    box-sizing: border-box;
+    background-color: rgba(0, 0, 0, 0.9);
+    padding: 10px;
+    
+}
+.headings{
+    color: white;
+    font-family: century;
+    font-size: 1.8rem;
+    text-align: center;
+    margin: 30px  0px;
+}
+.contain{
+    display: inline-block;
+    display: flex;
+    flex-direction: column;
+    font-family: century;
+    color: white;
+    font-size: 35px;
+    width: 31.33%;
+    float: left;
+}
+.contain a{
+    color: white;
+    text-decoration: none;
+    margin-left: 18%;
+
+}
+h5{
+    text-decoration: none;
+    color: white;
+    font-size: 17px;
+    margin-left: 1%;
+}
+
+
+.contain1{
+    display: inline-block;
+    display: flex;
+    flex-direction: column;
+    font-family: century;
+    color: white;
+    font-size: 35px;
+    width: 32.33%;
+    float: left;
+}
+.contain1 a{
+    color: white;
+    text-decoration: none;
+    margin-left: 37%;
+
+}
+
+
+.contain2{
+    display: inline-block;
+    display: flex;
+    flex-direction: column;
+    font-family: century;
+    color: white;
+    font-size: 35px;
+    width: 33.33%;
+    float: 0 auto;
+}
+.contain2 a{
+    color: white;
+    text-decoration: none;
+    margin-left: 35%;
+
+}
+.contain2 h5{
+    text-decoration: none;
+    color: white;
+    font-size: 17px;
+    margin-left: 1%;
+}
+
+.contain3{
+    display: inline-block;
+    display: flex;
+    flex-direction: column;
+    font-family: century;
+    color: white;
+    font-size: 23px;
+    width: 33.33%;
+    float: 0 auto;
+}
+.contain3 a{
+    color: white;
+    text-decoration: none;
+    margin-left: 26%;
+
+}
+.contain3 h5{
+    text-decoration: none;
+    color: white;
+    font-size: 17px;
+    margin-left: 1%;
+}
+
+
+
+/* Scroll to Top */
+.to-top{
+    background-color: white;
+    position: fixed;
+    bottom: 16px;
+    right: 32px;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 32px;
+    color: #1f1f1f;
+    text-decoration: none;
+    opacity: 0;
+    pointer-events: none;
+    transition: all .4s;
+}
+.to-top.active{
+    bottom: 32px;
+    pointer-events: auto;
+    opacity: 1;
+}
+.to-top:hover{
+    background-color: black;
+    color: white;
+}
+
+/* footer */
+footer{
+    background:  rgba(0, 0, 0, 0.9);
+}
+
+footer a:link{
+    color: #fff;
+    text-decoration: none;
+}
+footer a:visited{
+    color: #fff;
+    text-decoration: none;
+}
+footer a:hover{
+    color: #fff;
+    text-decoration: none;
+}
+footer a:active{
+    color: #fff;
+    text-decoration: none;
+}
+footer .icon{
+    margin: 20px;
+    font-size: 24px;
+
+}
+footer .icon:hover{
+    transform: translate(0, -2px);
+
+}
